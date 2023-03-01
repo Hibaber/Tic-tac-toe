@@ -18,7 +18,6 @@ const checkForWinner = () => {
   winningCombinations.forEach(function (combination) {
     let check = combination.every(idx => cells[idx].innerText.trim() == currentPlayer)
     if (check) {
-      // alert(currentPlayer + "has won")
       highlighCells(combination)
     }
   })
@@ -31,7 +30,7 @@ function highlighCells(combination) {
 }
 arrCells.forEach(function (cell) {
   cell.addEventListener("click", function () {
-    //alert("clickando")
+
     if (cell.innerText.trim() != "") return
     cell.innerText = currentPlayer;
     checkForWinner()
